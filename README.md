@@ -1,7 +1,12 @@
 ## Hi there 👋, I'm Luiz Giacomossi
 
-![](https://raw.githubusercontent.com/luizgiacomossi/luizgiacomossi/master/profile-summary-card-output/tokyonight/0-profile-details.svg)
-![](https://raw.githubusercontent.com/luizgiacomossi/luizgiacomossi/master/profile-summary-card-output/tokyonight/2-most-commit-language.svg)
+<div align="center">
+  <img src="https://raw.githubusercontent.com/luizgiacomossi/luizgiacomossi/main/profile-summary-card-output/tokyonight/0-profile-details.svg" height="170" alt="Profile Details" />
+  
+  <img src="https://raw.githubusercontent.com/luizgiacomossi/luizgiacomossi/main/profile-summary-card-output/tokyonight/3-stats.svg" height="170" alt="General Stats" />
+  
+  <img src="https://raw.githubusercontent.com/luizgiacomossi/luizgiacomossi/main/profile-summary-card-output/tokyonight/2-most-commit-language.svg" height="170" alt="Top Languages" />
+</div>
 
 ### 🔭 Current Work
 - PhD student at MDU, Sweden, focusing on autonomous drone swarms for search and rescue operations.
@@ -17,5 +22,12 @@
 - Embedded software for robotics and drones.
 - Research projects on disaster monitoring and AI-driven search optimization.
 
-![Streak Stats](https://github-readme-streak-stats.herokuapp.com/?user=luizgiacomossi&theme=tokyonight&hide_border=true)
-[![Trophies](https://github-profile-trophy.vercel.app/?username=luizgiacomossi&theme=tokyonight&no-frame=true&column=7)](https://github.com/ryo-ma/github-profile-trophy)
+<div align="center">
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=luizgiacomossi&theme=tokyonight&hide_border=true" alt="Streak Stats" />
+  
+  <br/>
+  
+  <a href="https://github.com/ryo-ma/github-profile-trophy">
+    <img src="https://github-profile-trophy.vercel.app/?username=luizgiacomossi&theme=tokyonight&no-frame=true&column=7" alt="Trophies" />
+  </a>
+</div>
