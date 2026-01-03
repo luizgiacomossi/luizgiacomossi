@@ -13,21 +13,18 @@ jobs:
       contents: write
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+          fetch-depth: 0
+          token: ${{ secrets.PROFILE_TOKEN }} # Força o uso do seu token no checkout
 
-      # --- SEU CÓDIGO DE DEBUG E CONFIGURAÇÃO ---
       - name: Generate Cards
         uses: vn7n24fzkq/github-profile-summary-cards@release
         env:
-          # AQUI é o segredo: Ele pega o token que você acabou de salvar
+          # O script interno busca EXATAMENTE essa variável de ambiente
           GITHUB_TOKEN: ${{ secrets.PROFILE_TOKEN }}
         with:
           USERNAME: ${{ github.repository_owner }}
           BRANCH_NAME: "main"
-      # ------------------------------------------
-
-      - uses: vn7n24fzkq/github-profile-summary-cards@release
-        env:
-          GITHUB_TOKEN: ${{ secrets.PROFILE_TOKEN }}
-        with:
-          USERNAME: ${{ github.repository_owner }}
+          commit_message: "docs: update profile summary cards" # Mensagem explícita
