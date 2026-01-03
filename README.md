@@ -15,6 +15,6 @@ Here are some ideas to get you started:
 - ⚡ Fun fact: ...
 -->
 <div align="center">
-  <img height="180em" src="https://github-readme-stats.vercel.app/api?username=luizgiacomossi&show_icons=true&theme=tokyonight&hide_border=true&count_private=true" />
-  <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=luizgiacomossi&layout=compact&theme=tokyonight&hide_border=true" />
+  <img height="180em" src="https://github-readme-stats.vercel.app/api?username=luizgiacomossi&show_icons=true&theme=tokyonight&hide_border=true" alt="Estatísticas do Luiz" />
+  <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=luizgiacomossi&layout=compact&theme=tokyonight&hide_border=true" alt="Linguagens do Luiz" />
 </div>
