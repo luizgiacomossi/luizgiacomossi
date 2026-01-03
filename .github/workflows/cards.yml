@@ -16,18 +16,14 @@ jobs:
       - uses: actions/checkout@v3
 
       # --- SEU CÓDIGO DE DEBUG E CONFIGURAÇÃO ---
-      - name: Check git user and permissions
-        run: |
-          git config --global user.email "action@github.com"
-          git config --global user.name "GitHub Action"
-          git remote -v
-          git branch
-          gh auth status || echo "gh not installed"
+      - name: Generate Cards
+        uses: vn7n24fzkq/github-profile-summary-cards@release
         env:
-          # Mantive o PROFILE_TOKEN aqui para garantir que estamos testando 
-          # o mesmo token que será usado para ler seus repositórios privados.
-          # Se você não criou o PROFILE_TOKEN, mude para GITHUB_TOKEN.
-          GITHUB_TOKEN: ${{ secrets.PROFILE_TOKEN }} 
+          # AQUI é o segredo: Ele pega o token que você acabou de salvar
+          GITHUB_TOKEN: ${{ secrets.PROFILE_TOKEN }}
+        with:
+          USERNAME: ${{ github.repository_owner }}
+          BRANCH_NAME: "main"
       # ------------------------------------------
 
       - uses: vn7n24fzkq/github-profile-summary-cards@release
