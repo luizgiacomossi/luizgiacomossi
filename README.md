@@ -17,13 +17,5 @@
 - Embedded software for robotics and drones.
 - Research projects on disaster monitoring and AI-driven search optimization.
 
-### 💬 Ask Me About
-- Embedded software for drones and vehicles.
-- Cooperative AI algorithms and simulations.
-- Real-time systems and model-based programming with MATLAB/Simulink.
-
-### ⚡ Fun Fact
-- I’ve worked on autonomous drone swarm simulations that can dynamically reconfigure to continue missions even after drone loss.
-
 ![Streak Stats](https://github-readme-streak-stats.herokuapp.com/?user=luizgiacomossi&theme=tokyonight&hide_border=true)
 [![Trophies](https://github-profile-trophy.vercel.app/?username=luizgiacomossi&theme=tokyonight&no-frame=true&column=7)](https://github.com/ryo-ma/github-profile-trophy)
