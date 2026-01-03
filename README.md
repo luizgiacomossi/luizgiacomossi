@@ -16,3 +16,6 @@ Here are some ideas to get you started:
 -->
 ![](https://raw.githubusercontent.com/luizgiacomossi/luizgiacomossi/master/profile-summary-card-output/tokyonight/0-profile-details.svg)
 ![](https://raw.githubusercontent.com/luizgiacomossi/luizgiacomossi/master/profile-summary-card-output/tokyonight/2-most-commit-language.svg)
+
+![Streak Stats](https://github-readme-streak-stats.herokuapp.com/?user=luizgiacomossi&theme=tokyonight&hide_border=true)
+[![Trophies](https://github-profile-trophy.vercel.app/?username=luizgiacomossi&theme=tokyonight&no-frame=true&column=7)](https://github.com/ryo-ma/github-profile-trophy)
