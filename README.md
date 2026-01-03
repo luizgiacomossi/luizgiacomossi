@@ -14,4 +14,5 @@ Here are some ideas to get you started:
 - 😄 Pronouns: ...
 - ⚡ Fun fact: ...
 -->
-![Streak Stats](https://github-readme-streak-stats.herokuapp.com/?user=luizgiacomossi&theme=tokyonight&hide_border=true)
+![](https://raw.githubusercontent.com/luizgiacomossi/luizgiacomossi/master/profile-summary-card-output/tokyonight/0-profile-details.svg)
+![](https://raw.githubusercontent.com/luizgiacomossi/luizgiacomossi/master/profile-summary-card-output/tokyonight/2-most-commit-language.svg)
