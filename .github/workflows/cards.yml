@@ -2,8 +2,8 @@ name: GitHub-Profile-Summary-Cards
 
 on:
   schedule:
-    - cron: "0 0 * * *"
-  workflow_dispatch:
+    - cron: "0 0 * * *" # Executa todo dia à meia-noite
+  workflow_dispatch: # Permite rodar manualmente
 
 jobs:
   build:
@@ -13,36 +13,46 @@ jobs:
       contents: write
 
     steps:
-      # 1. Checkout completo (fetch-depth: 0 é essencial para não quebrar o push)
+      # 1. Checkout Completo
       - uses: actions/checkout@v4
         with:
+          fetch-depth: 0
           token: ${{ secrets.PROFILE_TOKEN }}
-          fetch-depth: 0 
 
-      # 2. Gera os cards, mas PROÍBE a action de tentar salvar sozinha
-      - name: Generate Cards (Sem Push)
+      # 2. Gera os Cards (SEM tentar salvar automático)
+      - name: Generate Cards (No Push)
         uses: vn7n24fzkq/github-profile-summary-cards@release
         env:
           GITHUB_TOKEN: ${{ secrets.PROFILE_TOKEN }}
         with:
           USERNAME: ${{ github.repository_owner }}
-          AUTO_PUSH: false # AQUI ESTÁ A CHAVE: Desativamos o push automático
+          AUTO_PUSH: false # Desativado para nós controlarmos o salvamento
 
-      # 3. Nós mesmos fazemos o salvamento (muito mais seguro)
-      - name: Push Manual Seguro
+      # 3. Salvamento Manual com Força Bruta e Debug
+      - name: Push Manual com Debug
         run: |
-          # Configura um usuário genérico para não dar erro de identidade
+          # Configura identidade do bot
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           
-          # Adiciona a pasta gerada
+          # AQUI ESTÁ O SEGREDO: Força o token diretamente na URL do repositório
+          # Isso atropela qualquer bloqueio de permissão padrão
+          git remote set-url origin https://x-access-token:${{ secrets.PROFILE_TOKEN }}@github.com/${{ github.repository }}.git
+          
+          # Prepara arquivos
           git add profile-summary-card-output
           
-          # Só tenta salvar se tiver mudança real (evita erro de "nada para commitar")
+          # Verifica mudanças
           if git diff --staged --quiet; then
-            echo "Nada mudou nas estatísticas hoje. Pulando salvamento."
+            echo "Nenhuma mudança nas estatísticas hoje. Tudo limpo."
           else
             git commit -m "docs: update profile stats [skip ci]"
-            git push
-            echo "Sucesso! Estatísticas atualizadas."
+            
+            echo "--- TENTANDO PUSH FORÇADO ---"
+            # Ativa logs detalhados caso falhe
+            export GIT_TRACE=1
+            export GIT_CURL_VERBOSE=1
+            
+            git push origin HEAD:main
+            echo "SUCESSO! Estatísticas enviadas."
           fi
